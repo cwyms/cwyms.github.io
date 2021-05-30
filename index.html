@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/jquerybdtxk.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+<!--Announced by Visual SiteBuilder 9-->
+<link rel="stylesheet" type="text/css" href="static/css/_sitegray_d.css" />
+<script language="javascript" src="static/js/_sitegray.js"></script>
+<!-- CustomerNO:7765626265723230697547545352574603010003 -->
+<link rel="stylesheet" type="text/css" href="../huansuan.vsb.css" />
+<script type="text/javascript" src="static/js/counter.js"></script>
+<script type="text/javascript">_jsq_(1076,'/huansuan.jsp',-1,1676530092)</script>
+</head>
+<body>
+
+        
+        </div>
+    </div>
+</div>
+
+
+<!--banner-->
+<div style=" clear: both"></div>
+
+<!--main-->
+<div class="zy_zinfo">
+    <div class="infotitle">
+        <h1>综合分换算</h1>
+    </div>
+<ul><li class="baoming">
+
+
+                        <form action=""><table class="cxb" width="650" border="0" cellspacing="2" cellpadding="0" style="border: none;background: #eee;">
+
+                                <tbody>
+                                    <tr style="background: #fff;">
+                                        <td width="185" class="textleft">专业类别</td>
+                                        <td width="500">
+                                            <select class="inputText" id="testtype" name="types">
+                                                <option value="0">设计</option>
+                                            </select>
+                                            <span class="regtitle">请在此选择专业类别</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textleft">文化科成绩</td>
+                                        <td><input class="form-text1" type="text" id="culturescore"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textleft">专业课成绩</td>
+                                        <td><input class="form-text1" type="text" id="majorscore"><span class="TableContent">考生所报考专业课成绩</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textleft">综合分</td>
+                                        <td><input class="form-text1" type="text" name="Composite" id="comprehensive" readonly="" style="background-color:#eee"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: right;"><input class="but_blue" type="button" id="convert" name="subBtn" value="确定计算"> <input class="but_gray" type="reset" id="reset" value="重新输入"></td>
+                                    </tr>
+                                </tbody>
+                            </table></form>
+<script type="text/javascript">
+var types = '[{"name":"\u8bbe\u8ba1","conuntRules":"(a * 0.3) + (c \/450 * 750 * 0.7)"},{"name":"\u9020\u578b","conuntRules":"(a * 0.3) + (c \/450 * 750 * 0.7)"},{"name":"\u4e66\u6cd5","conuntRules":"(a * 0.3) + (c \/450 * 750 * 0.7)"}]';    
+types = JSON.parse(types);
+    
+$(function () {
+$("#convert").click(function () {
+        var r = /^[0-9]+.?[0-9]*$/;
+
+        var culturescore = $("#culturescore").val();
+        var culturemarks = $("#culturemarks").val();
+        var majorscore = $("#majorscore").val();
+        var testtype = $("#testtype").val();
+
+        if (!r.test(culturescore)) {
+            alert('文化课成绩只能输入数字。');
+            $("#culturescore").val("");
+            $("#culturescore").focus();
+            return false;
+        }
+
+        if (!r.test(majorscore)) {
+            alert('专业课成绩只能输入数字。');
+            $("#majorscore").val("");
+            $("#majorscore").focus();
+            return false;
+        }
+
+        //var score = parseFloat((culturescore / culturemarks * 40) + (majorscore / 300 * 60));
+        var conuntRules = types[testtype]['conuntRules'];
+        conuntRules = conuntRules.replace("a",culturescore);
+        conuntRules = conuntRules.replace("b",culturemarks);
+        conuntRules = conuntRules.replace("c",majorscore);
+        var score = eval(conuntRules);
+        
+        if (isNaN(score)) {
+            alert('计算结果不为数字，请重新输入成绩。');
+            return false;
+        }
+        score = Math.round(score * 100) / 100;
+        $("#comprehensive").val(score);
+
+    });
+
+    $("#reset").click(function () {
+        $("#testtype").val("1");
+        $("#culturescore").val("");
+        $("#culturemarks").val("");
+        $("#majorscore").val("");
+        $("#comprehensive").val("");
+    });
+});
+</script>
+
+
+
+
+                    </li></ul>
+</div>
+<div class="hk">
+  <div class="wz"> 注：此综合分计算官网，根据文3专7等计算方法计算，（在输入文化与专业一致的情况下）与考生最后综合分一致，但由于每年的考生人数不同，所以排名也会有些上下浮动，故而考生在对照往年综合分的时候，发现同样的综合，排名会相差一些名次，是正常现象。故而换算完毕，不给予排名。仅供参考。</div>
+  <div class="tp"></div>
+</div>
+
+
+
+
+<script id="jsID" type="text/javascript">
+    jQuery("#inav").slide({
+        type: "menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+        titCell: ".nLi", //鼠标触发对象
+        targetCell: ".sub", //titCell里面包含的要显示/消失的对象
+        effect: "slideDown", //targetCell下拉效果
+        delayTime: 300, //效果时间
+        triggerTime: 0, //鼠标延迟触发时间（默认150）
+        returnDefault: true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+    });
+</script>
+
+</body>
+</html>
